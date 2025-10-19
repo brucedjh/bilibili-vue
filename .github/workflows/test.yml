@@ -7,11 +7,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+
+      - name: checkout
+        uses: actions/checkout@master
+
       - uses: actions/setup-node@v4
         with:
           node-version: '20'  # 假设你的 node-sass 版本兼容 Node.js 14（根据实际版本调整）
-      - name: checkout
-        uses: actions/checkout@master
 
       - name: Install system dependencies
         run: sudo apt-get update && sudo apt-get install -y python3 make g++
