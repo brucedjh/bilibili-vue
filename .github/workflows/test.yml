@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: install
-        run: yarn
+        run: NODE_TLS_REJECT_UNAUTHORIZED=0 yarn
 
       - name: build project
         run: yarn run build
