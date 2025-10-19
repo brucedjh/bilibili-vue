@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: install
-        run: yarn config set registry https://registry.npmmirror.com && yarn cache clean && export NODE_TLS_REJECT_UNAUTHORIZED=0 && yarn
+        run: rm -f yarn.lock && yarn config set registry https://registry.npmmirror.com && yarn cache clean && export NODE_TLS_REJECT_UNAUTHORIZED=0 && yarn
 
       - name: build project
         run: yarn run build
