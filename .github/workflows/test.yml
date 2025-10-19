@@ -12,7 +12,7 @@ jobs:
 
       - name: install
         run: npm config set strict-ssl false
-             NODE_TLS_REJECT_UNAUTHORIZED=0 yarn 
+             yarn 
 
       - name: build project
         run: yarn run build
