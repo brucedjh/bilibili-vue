@@ -18,14 +18,14 @@ jobs:
         
       - name: Build the Docker image # 步骤名字
         run: |
-          docker login --username=${{ secrets.DOCKER_USERNAME }} registry.cn-hangzhou.aliyuncs.com --password=${{ secrets.DOCKER_PASSWORD }}
+          docker login --username=jinhai12345_67890@126.com crpi-dndp9yqzsi910o27.cn-hongkong.personal.cr.aliyuncs.com --password=1111  ##          docker login --username=${{ secrets.DOCKER_USERNAME }} registry.cn-hangzhou.aliyuncs.com --password=${{ secrets.DOCKER_PASSWORD }}
           docker build -t bilibili-vue:latest . 
-          docker tag bilibili-vue registry.cn-hangzhou.aliyuncs.com/zlyyyy/bilibili-vue:latest
-          docker push registry.cn-hangzhou.aliyuncs.com/zlyyyy/bilibili-vue:latest # 推送
-      - name: ssh docker login
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          script: cd ~ && sh bilibili-vue-deploy.sh ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_PASSWORD }}
+          docker tag bilibili-vue registry.cn-hangzhou.aliyuncs.com/repo1/bilibili-vue:latest
+          docker push registry.cn-hangzhou.aliyuncs.com/repo1/bilibili-vue:latest # 推送
+#      - name: ssh docker login
+#        uses: appleboy/ssh-action@master
+#        with:
+#          host: ${{ secrets.SSH_HOST }}
+#          username: ${{ secrets.SSH_USERNAME }}
+#          password: ${{ secrets.SSH_PASSWORD }}
+#          script: cd ~ && sh bilibili-vue-deploy.sh ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_PASSWORD }}
