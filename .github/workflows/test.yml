@@ -15,7 +15,7 @@ jobs:
         yarn config set registry https://registry.npmmirror.com/  # 切换到淘宝镜像源
 
       - name: install
-        run: yarn
+        run: yarn install
 
       - name: build project
         run: yarn run build
