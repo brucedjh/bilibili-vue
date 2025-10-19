@@ -10,12 +10,8 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
 
-      - name: Install dependencies
-        run: |
-        yarn config set registry https://registry.npmmirror.com/  # 切换到淘宝镜像源
-
       - name: install
-        run: yarn install
+        run: NODE_TLS_REJECT_UNAUTHORIZED=0 yarn 
 
       - name: build project
         run: yarn run build
