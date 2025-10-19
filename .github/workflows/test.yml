@@ -11,7 +11,8 @@ jobs:
         uses: actions/checkout@master
 
       - name: install
-        run: yarn config set strict-ssl false
+        run: yarn config set registry https://registry.npmmirror.com
+             yarn config set strict-ssl false
              yarn 
 
       - name: build project
